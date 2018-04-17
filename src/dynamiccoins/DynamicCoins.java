@@ -8,22 +8,25 @@
 
 package dynamiccoins;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DynamicCoins {
 
-	public static int makeChange(int[] coins, int change) {
-		int minCoins = change;
+	public static List<Integer> makeChange(int[] coins, int change) {
 		
 		if (coins.length == 0) { //if we receive an empty coin array
 			throw new IllegalArgumentException("Array of size 0 not allowed");
 		}
-		//no solution if change is less than zero
-		if (change < 0) {
-			return 0;
+		
+		List<Integer> list= new ArrayList<>();
+		
+		//no coins if change is less than zero
+		if (change <= 0) {
+			list.add(0);
+			return list;
 		}
-		//one solution if change is zero
-		if (change == 0) {
-			return 1;
-		}
-		return minCoins;
+	
+		return list;
 	}
 }
