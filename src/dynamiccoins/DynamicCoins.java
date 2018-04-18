@@ -20,7 +20,7 @@ public class DynamicCoins {
             throw new IllegalArgumentException("Array of size 0 not allowed");
         }
     
-    	if(change <= 0) { //
+    	if(change <= 0) { //if we have no change or less than 0
     		System.out.println("No coins needed for change of " + change +"\n");
     		int[] result = {};
     		return result;
@@ -55,7 +55,7 @@ public class DynamicCoins {
             amount = amount - coins[prevCoin[amount]]; //subtract the coin we used from our amount
         }
         
-        System.out.println("Change = " + change);
+        System.out.println("Change = " + change); //print out change, denoms, and coins used
         System.out.println("Coin denoms are: " + Arrays.toString(coins));
         System.out.println("Coins needed are:");
         for (int i : result) {
@@ -63,6 +63,6 @@ public class DynamicCoins {
         }
         System.out.println("\n");
         
-        return result;
+        return result; //return array of coins used
     }
 }
